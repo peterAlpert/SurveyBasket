@@ -1,4 +1,6 @@
 
+using SurveyBasket.Repositories;
+
 namespace SurveyBasket
 {
     public class Program
@@ -13,6 +15,9 @@ namespace SurveyBasket
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            //register all services
+            builder.Services.AddScoped<IPollRepo, PollRepo>();
 
             var app = builder.Build();
 
